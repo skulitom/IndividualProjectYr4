@@ -1,0 +1,28 @@
+server:
+  port: ${PORT:8763}
+
+spring:
+  application:
+    name: project-service
+  data:
+    mongodb:
+      uri: mongodb://stprsvqq:hokamittt5@ds231956.mlab.com:31956/project_db
+  cloud:
+    stream:
+      bindings:
+        projectDeletedOutput:
+          destination: projectDeletedInput
+          contentType: application/json
+        projectUpdatedOutput:
+          destination: projectUpdatedInput
+          contentType: application/json
+  rabbitmq:
+      host: localhost
+      port: 5672
+      username: guest
+      password: guest
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2

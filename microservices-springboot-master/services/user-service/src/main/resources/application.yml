@@ -1,0 +1,19 @@
+server:
+  port: ${PORT:8764}
+
+spring:
+  application:
+    name: user-service
+  data:
+    mongodb:
+      uri: mongodb://ijgoidg:jkl88pvb@ds231956.mlab.com:31956/user_db
+  rabbitmq:
+      host: localhost
+      port: 5672
+      username: guest
+      password: guest
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2

@@ -1,0 +1,22 @@
+server:
+  port: ${PORT:8762}
+
+spring:
+  application:
+    name: api-gateway
+
+zuul:
+  ignoredServices: '*'
+  routes:
+    project-service:
+      path: /api/projects/**
+      serviceId: project-service
+      stripPrefix: false
+    user-service:
+      path: /api/users/**
+      serviceId: user-service
+      stripPrefix: false
+
+eureka:
+  client:
+    registerWithEureka: false
