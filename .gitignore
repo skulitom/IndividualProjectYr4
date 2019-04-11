@@ -28,4 +28,4 @@ target/*
 /microservices-springboot-master/services/project-service/target
 /microservices-springboot-master/services/user-service/target
 /microservices-springboot-master/services/service-discovery/target
-/microservices-springboot-master/dist
+/microservices-springboot-master/dist/target
