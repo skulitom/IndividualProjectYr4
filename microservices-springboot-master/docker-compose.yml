@@ -18,8 +18,8 @@ services:
       context: ./ui/
       dockerfile: Dockerfile
     volumes:
-      - '.:/usr/src/app'
-      - '/usr/src/app/node_modules'
+      - './ui/:./ui/usr/src/app'
+      - './ui/usr/src/app/node_modules'
     ports:
       - '3000:3000'
 
