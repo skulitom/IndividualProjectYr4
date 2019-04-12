@@ -55,12 +55,12 @@ services:
     ports:
       - '8763:8763'
 
-    user-service:
-      container_name: user-service
-      build:
-        context: ./user-service/
-        dockerfile: Dockerfile
-      volumes:
-      - '.:/data'
-      ports:
-        - '8764:8764'
+  user-service:
+    container_name: user-service
+    build:
+      context: ./user-service/
+      dockerfile: Dockerfile
+    volumes:
+    - '.:/data'
+    ports:
+      - '8764:8764'
