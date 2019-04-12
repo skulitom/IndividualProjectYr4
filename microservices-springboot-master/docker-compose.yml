@@ -18,8 +18,8 @@ services:
       context: ./ui/
       dockerfile: Dockerfile
     volumes:
-      - './ui/:./ui/usr/src/app'
-      - './ui/usr/src/app/node_modules'
+      - './ui/:/usr/src/app'
+      - '/usr/src/app/node_modules'
     ports:
       - '3000:3000'
 
@@ -32,6 +32,8 @@ services:
       - '.:/data'
     ports:
       - '8762:8762'
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://serviceregistry:8761/eureka
 
   service-discovery:
     container_name: service-discovery
@@ -42,6 +44,9 @@ services:
       - '.:/data'
     ports:
       - '8761:8761'
+    hostname: serviceregistry
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://serviceregistry:8761/eureka
 
   project-service:
     container_name: project-service
@@ -52,6 +57,8 @@ services:
       - '.:/data'
     ports:
       - '8763:8763'
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://serviceregistry:8761/eureka
 
   user-service:
     container_name: user-service
@@ -62,3 +69,5 @@ services:
     - '.:/data'
     ports:
       - '8764:8764'
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://serviceregistry:8761/eureka
