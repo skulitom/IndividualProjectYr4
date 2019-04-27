@@ -24,8 +24,8 @@
 /build/
 /node_modules/
 target/*
-/microservices-springboot-master/services/api-gateway/target
-/microservices-springboot-master/services/project-service/target
-/microservices-springboot-master/services/user-service/target
-/microservices-springboot-master/services/service-discovery/target
-/microservices-springboot-master/dist/target
+/microservices-project/services/api-gateway/target
+/microservices-project/services/project-service/target
+/microservices-project/services/user-service/target
+/microservices-project/services/service-discovery/target
+/microservices-project/dist/target
