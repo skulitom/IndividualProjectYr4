@@ -1,15 +1,15 @@
 package com.ucl.projectmanager.gateway.filter;
 
-import com.netflix.zuul.context.RequestContext;
 import org.springframework.cloud.netflix.zuul.filters.post.LocationRewriteFilter;
 import org.springframework.http.HttpStatus;
+import com.netflix.zuul.context.RequestContext;
 
-public class CustomLocationRewriteFilter extends LocationRewriteFilter {
+public class RewriteFilter extends LocationRewriteFilter {
 
     @Override
     public boolean shouldFilter() {
         RequestContext ctx = RequestContext.getCurrentContext();
-        int statusCode = ctx.getResponseStatusCode();
-        return HttpStatus.valueOf(statusCode).is3xxRedirection() || HttpStatus.valueOf(statusCode) == HttpStatus.CREATED;
+        int status = ctx.getResponseStatusCode();
+        return HttpStatus.valueOf(status).is3xxRedirection() || HttpStatus.valueOf(status) == HttpStatus.CREATED;
     }
 }
