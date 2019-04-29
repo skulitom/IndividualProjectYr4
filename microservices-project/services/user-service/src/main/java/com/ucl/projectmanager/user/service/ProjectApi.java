@@ -53,6 +53,7 @@ class ProjectApi {
         if (serviceInstance == null) {
             throw new ServiceUnavailableException("Service unavailable");
         }
+
         return serviceInstance.getUri();
     }
 }
